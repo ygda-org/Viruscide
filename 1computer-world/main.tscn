@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bsyxhc54nwvb5"]
+
+[ext_resource type="PackedScene" uid="uid://by1jf804fdqe5" path="res://1computer-world/level.tscn" id="1_oui3b"]
+[ext_resource type="PackedScene" uid="uid://ounqhw1isyl5" path="res://1computer-world/player/player.tscn" id="2_d7vwi"]
+
+[node name="Main" type="Node2D" unique_id=939559241]
+
+[node name="Level" parent="." unique_id=2066555205 instance=ExtResource("1_oui3b")]
+
+[node name="Player" parent="." unique_id=1585118958 instance=ExtResource("2_d7vwi")]
+position = Vector2(12, -23)
