@@ -1,9 +1,13 @@
 [gd_scene format=4 uid="uid://by1jf804fdqe5"]
 
 [ext_resource type="TileSet" uid="uid://wuntjm6ahb7b" path="res://0assets/global_assets/temp/temp_tileset.tres" id="1_6fo7m"]
+[ext_resource type="PackedScene" uid="uid://bk1p7ier825wh" path="res://1computer-world/viruses/virus_spawn_point.tscn" id="2_c6wc4"]
 
 [node name="Level" type="Node2D" unique_id=2066555205]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2114033813]
-tile_map_data = PackedByteArray("AAD9/wAAAAABAAIAAAD+/wAAAAABAAIAAAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAA=")
+tile_map_data = PackedByteArray("AAD9/wAAAAABAAIAAAD+/wAAAAABAAIAAAD//wAAAAABAAIAAAAAAAAAAAABAAIAAAABAAAAAAABAAIAAAACAAAAAAABAAIAAAADAAAAAAABAAIAAAAEAAAAAAABAAIAAAAFAAAAAAABAAIAAAAGAAAAAAABAAIAAAAHAAAAAAABAAIAAAD8/wAAAAABAAIAAAD7/wAAAAABAAIAAAD6/wAAAAABAAIAAAD5/wAAAAABAAIAAAD4/wAAAAABAAIAAAD3/wAAAAABAAIAAAAIAAAAAAABAAIAAAAJAAAAAAABAAIAAAAKAAAAAAABAAIAAAALAAAAAAABAAIAAAA=")
 tile_set = ExtResource("1_6fo7m")
+
+[node name="VirusSpawnPoint" parent="." unique_id=537412257 instance=ExtResource("2_c6wc4")]
+position = Vector2(142, -28)
