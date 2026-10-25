@@ -5,3 +5,5 @@ Please name your folder like this folder is named (it should go in the middle in
 Please name your main scene "[name]_game.tscn"
 
 i.e. shooting_game.tscn
+
+This game is a minimalist example.

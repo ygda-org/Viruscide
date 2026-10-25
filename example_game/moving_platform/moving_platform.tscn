@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bqa0hh5hg003g"]
+
+[ext_resource type="Texture2D" uid="uid://csrcp0pjwc4ge" path="res://0assets/global_assets/temp/sideview_programmer_art.png" id="1_k45cx"]
+[ext_resource type="Script" uid="uid://b6mqt80hhlj2k" path="res://example_game/moving_platform/moving_platform.gd" id="1_vhc1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k45cx"]
+size = Vector2(48, 16)
+
+[node name="MovingPlatform" type="AnimatableBody2D" unique_id=620090397]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_vhc1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=248890495]
+texture = ExtResource("1_k45cx")
+region_enabled = true
+region_rect = Rect2(48, 0, 48, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1957877451]
+shape = SubResource("RectangleShape2D_k45cx")
+one_way_collision = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=295372291]
+rect = Rect2(-1, -1, 2, 2)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
