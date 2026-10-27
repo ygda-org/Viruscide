@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ounqhw1isyl5"]
 
-[ext_resource type="Script" uid="uid://dorgvvfs0i83q" path="res://1computer-world/player/player.gd" id="1_wydp4"]
+[ext_resource type="Script" uid="uid://dorgvvfs0i83q" path="res://1computer_world/player/computer_player.gd" id="1_wydp4"]
 [ext_resource type="Texture2D" uid="uid://bimamq5grxeyk" path="res://0assets/global_assets/temp/miku_fall_land.png" id="2_i6a3x"]
 [ext_resource type="Texture2D" uid="uid://dn1asspau3ud8" path="res://0assets/global_assets/temp/miku_idle.png" id="2_jk6m8"]
 [ext_resource type="Texture2D" uid="uid://cakf7313ejmjx" path="res://0assets/global_assets/temp/miku_run.png" id="3_i6a3x"]
+[ext_resource type="PackedScene" uid="uid://c62mwtjhve8y1" path="res://2base_classes/effects_camera.tscn" id="5_iqagc"]
 
 [sub_resource type="Curve" id="Curve_e6pfn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.58677685), -0.8297518, 0.0, 0, 0]
@@ -107,6 +108,8 @@ radius = 4.0
 height = 28.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1585118958]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_wydp4")
 accel_curve = SubResource("Curve_e6pfn")
 decel_curve = SubResource("Curve_jk6m8")
@@ -126,7 +129,7 @@ shape = SubResource("CapsuleShape2D_i50wy")
 wait_time = 0.1
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1074343975]
-zoom = Vector2(2, 2)
-
 [node name="JumpBuffer" type="Timer" parent="." unique_id=698485504]
+
+[node name="Camera" parent="." unique_id=432830754 instance=ExtResource("5_iqagc")]
+zoom = Vector2(2, 2)

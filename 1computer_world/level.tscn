@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://by1jf804fdqe5"]
 
 [ext_resource type="TileSet" uid="uid://wuntjm6ahb7b" path="res://0assets/global_assets/temp/temp_tileset.tres" id="1_6fo7m"]
-[ext_resource type="PackedScene" uid="uid://bk1p7ier825wh" path="res://1computer-world/viruses/virus_spawn_point.tscn" id="2_c6wc4"]
+[ext_resource type="PackedScene" uid="uid://bk1p7ier825wh" path="res://1computer_world/viruses/virus_spawn_point.tscn" id="2_c6wc4"]
 
 [node name="Level" type="Node2D" unique_id=2066555205]
 

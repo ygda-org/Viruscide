@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cwba72xilc4ck"]
+
+[ext_resource type="Script" uid="uid://rm444txy52jr" path="res://2base_classes/dummy_effects_camera.gd" id="1_rckoj"]
+
+[node name="DummyEffectsCamerae" type="Camera2D" unique_id=1714161429]
+script = ExtResource("1_rckoj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1352279328]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://baq4adqedkv00"]
 
-[ext_resource type="Script" uid="uid://dwafs24icgiqa" path="res://1computer-world/viruses/virus_spawn.gd" id="1_8as8x"]
-[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="1_ojavj"]
+[ext_resource type="Script" uid="uid://dwafs24icgiqa" path="res://1computer_world/viruses/virus.gd" id="1_bkjdd"]
+[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="2_0owp7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojavj"]
 radius = 14.0
 
-[node name="VirusSpawn" type="Area2D" unique_id=2031985769]
-script = ExtResource("1_8as8x")
+[node name="Virus" type="Area2D" unique_id=2031985769]
+script = ExtResource("1_bkjdd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953409484]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_ojavj")
+texture = ExtResource("2_0owp7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=110910295]
 shape = SubResource("CircleShape2D_ojavj")

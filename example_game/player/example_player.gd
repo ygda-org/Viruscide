@@ -1,1 +1,2 @@
 extends ComputerPlayer
+class_name ExampleGamePlayer

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2gvmydg445ow"]
 
-[ext_resource type="PackedScene" uid="uid://ounqhw1isyl5" path="res://1computer-world/player/player.tscn" id="1_qaqbl"]
+[ext_resource type="PackedScene" uid="uid://ounqhw1isyl5" path="res://1computer_world/player/computer_player.tscn" id="1_qaqbl"]
 [ext_resource type="Script" uid="uid://78enifx41bt" path="res://example_game/player/example_player.gd" id="2_fkdru"]
 
 [sub_resource type="Curve" id="Curve_fkdru"]
@@ -20,15 +20,12 @@ _data = [Vector2(0, 0.8677686), 0.0, 0.31913546, 0, 0, Vector2(1, 1), 0.0, 0.0, 
 point_count = 2
 
 [node name="Player" unique_id=1585118958 instance=ExtResource("1_qaqbl")]
-collision_layer = 3
-collision_mask = 3
 script = ExtResource("2_fkdru")
 accel_curve = SubResource("Curve_fkdru")
 decel_curve = SubResource("Curve_7xcq4")
 grav_curve_asc = SubResource("Curve_2hfiy")
 grav_curve_dec = SubResource("Curve_20dka")
 
-[node name="Camera2D" parent="." index="3" unique_id=1074343975]
-offset = Vector2(0, -40)
+[node name="Camera" parent="." index="4" unique_id=432830754]
 limit_left = 0
 limit_right = 480

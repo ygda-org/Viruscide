@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dny7s8ok31avw"]
+
+[ext_resource type="Script" uid="uid://0jjurol37rya" path="res://example_game/end_point/end_point.gd" id="1_1j1a6"]
+
+[sub_resource type="Gradient" id="Gradient_1rdjl"]
+offsets = PackedFloat32Array(0, 0.34375, 0.40625)
+colors = PackedColorArray(0.72156864, 0.6666667, 0.1254902, 1, 0.7970588, 0.7084559, 0.08235295, 0.65625, 0.9411765, 0.7882353, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1j1a6"]
+gradient = SubResource("Gradient_1rdjl")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_ywkav"]
+offsets = PackedFloat32Array(0, 0.8293269)
+colors = PackedColorArray(0.72156864, 0.6666667, 0.1254902, 0.5568628, 0.9411765, 0.7882353, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1rdjl"]
+gradient = SubResource("Gradient_ywkav")
+width = 48
+height = 48
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1rdjl"]
+radius = 14.0
+
+[node name="EndPoint" type="Area2D" unique_id=1248210251]
+script = ExtResource("1_1j1a6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1772001386]
+texture = SubResource("GradientTexture2D_1j1a6")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1602114179]
+texture = SubResource("GradientTexture2D_1rdjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1743372454]
+shape = SubResource("CircleShape2D_1rdjl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

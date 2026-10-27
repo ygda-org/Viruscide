@@ -7,5 +7,5 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body):
-	if body is ComputerPlayer:
+	if body is Player:
 		print("player died!")

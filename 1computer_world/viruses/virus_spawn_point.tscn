@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bk1p7ier825wh"]
 
-[ext_resource type="Script" uid="uid://cd5on2ua3ao7x" path="res://1computer-world/viruses/virus_spawn_point.gd" id="1_hpg1g"]
+[ext_resource type="Script" uid="uid://cd5on2ua3ao7x" path="res://1computer_world/viruses/virus_spawn_point.gd" id="1_hpg1g"]
 
 [node name="VirusSpawnPoint" type="Marker2D" unique_id=537412257]
 script = ExtResource("1_hpg1g")

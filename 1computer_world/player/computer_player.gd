@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Player
 class_name ComputerPlayer
 
 # this script is not for club members to alter.
@@ -46,10 +46,14 @@ func _physics_process(delta: float) -> void:
 		$JumpBuffer.stop()
 		$CoyoteTime.stop()
 		target_scale = Vector2(0.4, 1.5)
+		Utils.get_active_effects_camera().add_trauma(0.1)
 	if Input.is_action_just_pressed("jump"):
 		$JumpBuffer.start()
 	elif Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y /= 2.15
+	# fall through platforms
+	set_collision_mask_value(2, not Input.is_action_pressed("down"))
+	
 	
 	# horizontal
 	var dir: float = Input.get_axis("left", "right")
