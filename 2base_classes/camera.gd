@@ -1,16 +1,19 @@
 extends Camera2D
 class_name EffectsCamera
 
+## set target_offset instead of offset
 var target_offset = Vector2(0,0)
 var trauma: float = 0.0
-var trauma_decay: float = 1.5
+@export_category("Shake Trauma")
+@export var trauma_decay: float = 1.5
 @export var noise : FastNoiseLite
-var max_shake: Vector2 = Vector2(50, 30)
+@export var max_shake: Vector2 = Vector2(50, 30)
 var noise_height = 0
 
 var zoom_trauma: float = 1.0
-var zoom_trauma_decay: float = 1.5
-const MAX_ZOOM_TRAUMA_DIFF = 0.5
+@export_category("Zoom Trauma")
+@export var zoom_trauma_decay: float = 1.5
+@export var max_zoom_trauma_diff = 0.5
 
 const MULTIPLIER = 1.9
 
@@ -24,7 +27,7 @@ func _process(delta):
 	else:
 		offset = offset.lerp(target_offset, delta*20)
 	offset = offset.clamp(-max_shake, max_shake)
-	zoom_trauma = clampf(move_toward(zoom_trauma, 1, delta*zoom_trauma_decay), 1-MAX_ZOOM_TRAUMA_DIFF, 1+MAX_ZOOM_TRAUMA_DIFF)
+	zoom_trauma = clampf(move_toward(zoom_trauma, 1, delta*zoom_trauma_decay), 1-max_zoom_trauma_diff, 1+max_zoom_trauma_diff)
 	zoom = zoom.lerp(Vector2(2,2)*zoom_trauma, delta * 20)
 
 ## function to add screen shake trauma
