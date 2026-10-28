@@ -46,7 +46,7 @@ func _physics_process(delta: float) -> void:
 		$JumpBuffer.stop()
 		$CoyoteTime.stop()
 		target_scale = Vector2(0.4, 1.5)
-		Utils.get_active_effects_camera().add_trauma(0.1)
+		#Utils.get_active_effects_camera().add_trauma(0.01)
 	if Input.is_action_just_pressed("jump"):
 		$JumpBuffer.start()
 	elif Input.is_action_just_released("jump") and velocity.y < 0:
