@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bimamq5grxeyk" path="res://0assets/global_assets/temp/miku_fall_land.png" id="2_i6a3x"]
 [ext_resource type="Texture2D" uid="uid://dn1asspau3ud8" path="res://0assets/global_assets/temp/miku_idle.png" id="2_jk6m8"]
 [ext_resource type="Texture2D" uid="uid://cakf7313ejmjx" path="res://0assets/global_assets/temp/miku_run.png" id="3_i6a3x"]
-[ext_resource type="PackedScene" uid="uid://c62mwtjhve8y1" path="res://2base_classes/effects_camera.tscn" id="5_iqagc"]
+[ext_resource type="PackedScene" uid="uid://c62mwtjhve8y1" path="res://2base_classes/effects_camera/effects_camera.tscn" id="5_iqagc"]
 
 [sub_resource type="Curve" id="Curve_e6pfn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.58677685), -0.8297518, 0.0, 0, 0]

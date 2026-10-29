@@ -1,5 +1,7 @@
 extends Node
 
+# this script is meant for specialized helper functions that can be useful across multiple games
+
 ## returns the active EffectsCamera if found. Else returns a dummy camera and pushes an error
 func get_active_effects_camera() -> EffectsCamera:
 	var cam = get_viewport().get_camera_2d()

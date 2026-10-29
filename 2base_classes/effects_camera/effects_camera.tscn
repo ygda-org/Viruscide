@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c62mwtjhve8y1"]
 
-[ext_resource type="Script" uid="uid://dl1egut5pgbvd" path="res://2base_classes/camera.gd" id="1_mx8h4"]
+[ext_resource type="Script" uid="uid://dl1egut5pgbvd" path="res://2base_classes/effects_camera/effects_camera.gd" id="1_mx8h4"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_mx8h4"]
 

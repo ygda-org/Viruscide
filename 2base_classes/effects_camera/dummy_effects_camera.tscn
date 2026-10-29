@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwba72xilc4ck"]
 
-[ext_resource type="Script" uid="uid://rm444txy52jr" path="res://2base_classes/dummy_effects_camera.gd" id="1_rckoj"]
+[ext_resource type="Script" uid="uid://rm444txy52jr" path="res://2base_classes/effects_camera/dummy_effects_camera.gd" id="1_rckoj"]
 
 [node name="DummyEffectsCamerae" type="Camera2D" unique_id=1714161429]
 script = ExtResource("1_rckoj")
