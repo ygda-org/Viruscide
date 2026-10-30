@@ -1,9 +1,9 @@
 extends Node2D
 
 const MIN_Y_POS1: float = -500
-const MIN_Y_POS2: float = -500
+const MIN_Y_POS2: float = -1150
 
-const START_Y_POS2: float = -600
+const START_Y_POS2: float = -575
 
 
 func _ready():

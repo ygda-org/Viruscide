@@ -20,7 +20,9 @@ region_rect = Rect2(48, 0, 48, 16)
 shape = SubResource("RectangleShape2D_k45cx")
 one_way_collision = true
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=295372291]
-rect = Rect2(-1, -1, 2, 2)
+[node name="Timer" type="Timer" parent="." unique_id=973447462]
+wait_time = 25.0
+one_shot = true
+autostart = true
 
-[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

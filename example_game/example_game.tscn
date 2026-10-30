@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://wuntjm6ahb7b" path="res://0assets/global_assets/temp/temp_tileset.tres" id="2_cpsk8"]
 [ext_resource type="PackedScene" uid="uid://2gvmydg445ow" path="res://example_game/player/example_player.tscn" id="3_r8o0c"]
 [ext_resource type="PackedScene" uid="uid://b7h6bp71iokfl" path="res://example_game/swarm/swarm.tscn" id="4_hkewi"]
+[ext_resource type="PackedScene" uid="uid://dny7s8ok31avw" path="res://example_game/end_point/end_point.tscn" id="5_ownj2"]
 
 [node name="ExampleGame" type="Node2D" unique_id=1588970870]
 script = ExtResource("1_g8tlv")
@@ -24,3 +25,6 @@ position = Vector2(239, -30)
 
 [node name="Swarm" parent="." unique_id=273651111 instance=ExtResource("4_hkewi")]
 position = Vector2(-42, 68)
+
+[node name="EndPoint" parent="." unique_id=1248210251 instance=ExtResource("5_ownj2")]
+position = Vector2(239, -1224)

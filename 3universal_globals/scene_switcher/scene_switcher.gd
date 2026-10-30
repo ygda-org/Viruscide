@@ -32,9 +32,9 @@ func _scene_switch(new_scene: Variant, transition_type: Transition = Transition.
 	await transition_in_finished
 	get_tree().root.remove_child(get_tree().current_scene)
 	if new_scene is PackedScene:
-		get_tree().root.add_child(new_scene.instantiate())
-	elif new_scene is Node2D:
-		get_tree().root.add_child(new_scene)
+		new_scene = new_scene.instantiate()
+	get_tree().root.add_child(new_scene)
+	get_tree().current_scene = new_scene
 
 func _transition_in_finish():
 	transition_in_finished.emit()

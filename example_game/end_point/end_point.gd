@@ -3,4 +3,4 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("Game won!")
+		SceneSwitcher.return_to_computer_world()
