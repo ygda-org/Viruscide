@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://divjlh1fn4vt5"]
-
-[ext_resource type="Script" uid="uid://6jmcj4310jt2" path="res://1computer_world/computer_globals/level_transitions.gd" id="1_ictcs"]
-
-[node name="LevelTransitions" type="AnimationPlayer" unique_id=17985056]
-script = ExtResource("1_ictcs")

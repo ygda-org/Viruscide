@@ -18,9 +18,9 @@ config/icon="uid://c2s405qim0y42"
 [autoload]
 
 ComputerWorldReferences="*uid://dukme2bs76jhm"
-LevelTransitions="*uid://divjlh1fn4vt5"
 SfxPlayer="*uid://fmnyqc2cx2fw"
 Utils="*uid://cctoqrrnr52lb"
+SceneSwitcher="*uid://divjlh1fn4vt5"
 
 [display]
 

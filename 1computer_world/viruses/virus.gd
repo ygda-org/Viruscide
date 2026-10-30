@@ -5,4 +5,4 @@ var to_scene: PackedScene
 
 func _on_body_entered(body):
 	if body is ComputerPlayer and to_scene:
-		get_tree().change_scene_to_packed(to_scene)
+		SceneSwitcher.switch_scene_and_save_computer_world(to_scene)

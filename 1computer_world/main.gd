@@ -11,5 +11,6 @@ func spawn_viruses(amount):
 		if not spawn_point:
 			return
 		var virus = VIRUS.instantiate()
+		virus.to_scene = load("uid://bnnlwyrxlig3d")
 		add_child(virus)
 		virus.global_position = spawn_point.global_position
