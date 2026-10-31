@@ -17,6 +17,8 @@ var zoom_trauma: float = 1.0
 
 const MULTIPLIER = 1.9
 
+@onready var default_zoom: Vector2 = zoom
+
 func _ready():
 	noise.seed = randi()
 
@@ -28,7 +30,7 @@ func _process(delta):
 		offset = offset.lerp(target_offset, delta*20)
 	offset = offset.clamp(-max_shake, max_shake)
 	zoom_trauma = clampf(move_toward(zoom_trauma, 1, delta*zoom_trauma_decay), 1-max_zoom_trauma_diff, 1+max_zoom_trauma_diff)
-	zoom = zoom.lerp(Vector2(2,2)*zoom_trauma, delta * 20)
+	zoom = zoom.lerp(default_zoom*zoom_trauma, delta * 20)
 
 ## function to add screen shake trauma
 func add_trauma(amount):
