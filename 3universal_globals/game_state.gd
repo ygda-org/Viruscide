@@ -6,5 +6,7 @@ extends Node
 
 var strikes: int = 0
 
+var money: int = 0
+
 func failed_minigame():
 	strikes += 1

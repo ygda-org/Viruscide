@@ -21,6 +21,8 @@ ComputerWorldReferences="*uid://dukme2bs76jhm"
 SfxPlayer="*uid://fmnyqc2cx2fw"
 Utils="*uid://cctoqrrnr52lb"
 SceneSwitcher="*uid://divjlh1fn4vt5"
+UpgradeFlags="*uid://eiypd42c4cxc"
+GameState="*uid://nyp1acjjuhkj"
 
 [display]
 
