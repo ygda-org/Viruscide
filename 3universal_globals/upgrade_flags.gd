@@ -4,7 +4,7 @@ extends Node
 var flags: Dictionary[Upgrade.ID, bool] = {}
 
 func _ready():
-	for id in Upgrade.ID:
+	for id in Upgrade.ID.values():
 		flags[id] = false
 
 func buy_upgrade(upgrade: Upgrade):
