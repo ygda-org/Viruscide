@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dyp0w1pegl1fh"]
+
+[ext_resource type="Script" uid="uid://1ndrjs20l30q" path="res://data_dash_game/files/files.gd" id="1_4ncop"]
+[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="1_xc6mb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(32, 32)
+
+[node name="Files" type="CharacterBody2D" unique_id=1062136207]
+script = ExtResource("1_4ncop")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1317418284]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_xc6mb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=93619997]
+shape = SubResource("RectangleShape2D_bhunq")

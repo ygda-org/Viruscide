@@ -4,18 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="2_dqkjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(32, 32)
 
 [node name="Cannon" type="Area2D" unique_id=1874503222]
 script = ExtResource("1_nr6eo")
-camera_relative = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1807192703]
 position = Vector2(1.7881393e-07, 3.5762787e-07)
-scale = Vector2(0.15624999, 0.15625)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_dqkjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1306676442]
 shape = SubResource("RectangleShape2D_bhunq")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

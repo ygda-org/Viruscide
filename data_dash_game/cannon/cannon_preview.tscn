@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://ceuxquax5pp0a"]
 
-[ext_resource type="Script" uid="uid://dhd305hqnorqx" path="res://data_dash_game/cannon/cannon_preview.gd" id="1_4knbp"]
-[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="1_rwwg1"]
+[ext_resource type="Script" uid="uid://dhd305hqnorqx" path="res://data_dash_game/cannon/cannon_preview.gd" id="1_it0wx"]
+[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="2_c3rb4"]
 
 [node name="CannonPreview" type="Node2D" unique_id=769968328]
-script = ExtResource("1_4knbp")
+script = ExtResource("1_it0wx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942645100]
 scale = Vector2(0.0234375, 0.0234375)
-texture = ExtResource("1_rwwg1")
+texture = ExtResource("2_c3rb4")

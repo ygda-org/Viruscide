@@ -2,16 +2,59 @@
 
 [ext_resource type="Script" uid="uid://bx0w0xesvng7f" path="res://data_dash_game/effects_camera.gd" id="1_khob5"]
 [ext_resource type="PackedScene" uid="uid://bq48jj22cymyr" path="res://data_dash_game/cannon/cannon.tscn" id="2_usryb"]
+[ext_resource type="PackedScene" uid="uid://dyp0w1pegl1fh" path="res://data_dash_game/files/files.tscn" id="3_usryb"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_c0vgw"]
 
 [node name="DataDash" type="Node2D" unique_id=2000350777]
 
 [node name="EffectsCamera" type="Camera2D" parent="." unique_id=22801808]
-position = Vector2(-2, 1)
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 script = ExtResource("1_khob5")
 noise = SubResource("FastNoiseLite_c0vgw")
 metadata/_custom_type_script = "uid://dl1egut5pgbvd"
 
-[node name="Cannon" parent="." unique_id=1874503222 instance=ExtResource("2_usryb")]
+[node name="Cannon" parent="." unique_id=1874503222 node_paths=PackedStringArray("camera_relative") instance=ExtResource("2_usryb")]
+camera_relative = NodePath("../CameraPos1")
+
+[node name="Cannon2" parent="." unique_id=1425774917 node_paths=PackedStringArray("camera_relative") instance=ExtResource("2_usryb")]
+position = Vector2(352, -79)
+camera_relative = NodePath("../CameraPos2")
+
+[node name="CameraPos2" type="Marker2D" parent="." unique_id=1269606850]
+position = Vector2(484, -124)
+
+[node name="ScreenHelper" type="Marker2D" parent="CameraPos2" unique_id=1920122322]
+position = Vector2(-240, -135)
+
+[node name="ScreenHelper2" type="Marker2D" parent="CameraPos2" unique_id=695040238]
+position = Vector2(240, 135)
+
+[node name="ScreenHelper3" type="Marker2D" parent="CameraPos2" unique_id=410554995]
+position = Vector2(-240, 135)
+
+[node name="ScreenHelper4" type="Marker2D" parent="CameraPos2" unique_id=1127129047]
+position = Vector2(240, -135)
+
+[node name="CameraPos1" type="Marker2D" parent="." unique_id=2125827177]
+position = Vector2(174, -82)
+
+[node name="ScreenHelper" type="Marker2D" parent="CameraPos1" unique_id=2049034253]
+visible = false
+position = Vector2(-240, -135)
+
+[node name="ScreenHelper2" type="Marker2D" parent="CameraPos1" unique_id=1736984192]
+visible = false
+position = Vector2(240, 135)
+
+[node name="ScreenHelper3" type="Marker2D" parent="CameraPos1" unique_id=101948223]
+visible = false
+position = Vector2(-240, 135)
+
+[node name="ScreenHelper4" type="Marker2D" parent="CameraPos1" unique_id=184514331]
+visible = false
+position = Vector2(240, -135)
+
+[node name="Files" parent="." unique_id=1062136207 instance=ExtResource("3_usryb")]
+position = Vector2(0, -112)

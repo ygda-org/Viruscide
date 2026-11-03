@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var sprite : Sprite2D = $Sprite2D
-var vis: bool = false
+var visibility: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,7 +9,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		sprite.visible = vis
+		sprite.visible = visibility
 
 func visible(i : bool) -> void:
-	vis = i
+	visibility = i
