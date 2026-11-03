@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ceuxquax5pp0a"]
 
-[ext_resource type="Script" uid="uid://dhd305hqnorqx" path="res://data_dash/cannon/cannon_preview.gd" id="1_4knbp"]
+[ext_resource type="Script" uid="uid://dhd305hqnorqx" path="res://data_dash_game/cannon/cannon_preview.gd" id="1_4knbp"]
 [ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="1_rwwg1"]
 
 [node name="CannonPreview" type="Node2D" unique_id=769968328]

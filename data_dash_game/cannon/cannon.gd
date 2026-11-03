@@ -4,10 +4,13 @@ extends Area2D
 
 var cannon_hovered : bool = false
 var cannon_active : bool = false
+var holding_files : bool = true
 var preview_number : int = 6
 var velocity_mult : float = 2
 var time_mult : float = 0.5
 var game_gravity : float = 25
+
+@export var camera_relative : Vector2
 
 const CANNON_PREVIEW = preload("uid://ceuxquax5pp0a")
 
@@ -23,8 +26,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if holding_files:
+		
 	if !Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) && cannon_active:
 		hide_preview()
 		cannon_active = false

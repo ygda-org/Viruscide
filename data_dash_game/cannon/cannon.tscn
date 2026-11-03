@@ -1,17 +1,18 @@
 [gd_scene format=3 uid="uid://bq48jj22cymyr"]
 
-[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="1_snlm6"]
-[ext_resource type="Script" uid="uid://bgnr4tqmo60cg" path="res://data_dash/cannon/cannon.gd" id="1_uquo8"]
+[ext_resource type="Script" uid="uid://bgnr4tqmo60cg" path="res://data_dash_game/cannon/cannon.gd" id="1_nr6eo"]
+[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="2_dqkjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 
 [node name="Cannon" type="Area2D" unique_id=1874503222]
-script = ExtResource("1_uquo8")
+script = ExtResource("1_nr6eo")
+camera_relative = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1807192703]
 position = Vector2(1.7881393e-07, 3.5762787e-07)
 scale = Vector2(0.15624999, 0.15625)
-texture = ExtResource("1_snlm6")
+texture = ExtResource("2_dqkjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1306676442]
 shape = SubResource("RectangleShape2D_bhunq")
