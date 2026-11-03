@@ -59,6 +59,7 @@ script = ExtResource("1_k2r07")
 z_index = 1000
 offset_right = 961.0
 offset_bottom = 542.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=17985056]
