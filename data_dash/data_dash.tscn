@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://basw3f4tvo1bw"]
+
+[ext_resource type="PackedScene" uid="uid://bq48jj22cymyr" path="res://data_dash/cannon/cannon.tscn" id="1_7gqin"]
+[ext_resource type="Script" uid="uid://dl1egut5pgbvd" path="res://2base_classes/effects_camera/effects_camera.gd" id="2_372nl"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c0vgw"]
+
+[node name="DataDash" type="Node2D" unique_id=2000350777]
+
+[node name="EffectsCamera" type="Camera2D" parent="." unique_id=22801808]
+position = Vector2(-2, 1)
+zoom = Vector2(2, 2)
+script = ExtResource("2_372nl")
+noise = SubResource("FastNoiseLite_c0vgw")
+metadata/_custom_type_script = "uid://dl1egut5pgbvd"
+
+[node name="Cannon" parent="." unique_id=1874503222 instance=ExtResource("1_7gqin")]
