@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bqcse30eodpx1"]
+
+[ext_resource type="Script" uid="uid://ckd1cinudj6f4" path="res://skyster/player/explosion.gd" id="1_opl8v"]
+[ext_resource type="Texture2D" uid="uid://cghsjy4dphtki" path="res://0assets/skyster_assets/explosion_particle.png" id="2_660xs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh7nu"]
+radius = 200.0
+
+[sub_resource type="Curve" id="Curve_660xs"]
+_data = [Vector2(0.008474581, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.86725664), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_fki0y"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.91764706, 0, 0)
+
+[node name="Explosion" type="Area2D" unique_id=97653847]
+collision_layer = 0
+collision_mask = 5
+monitorable = false
+script = ExtResource("1_opl8v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=209302251]
+shape = SubResource("CircleShape2D_hh7nu")
+
+[node name="Timer" type="Timer" parent="." unique_id=530378022]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=579775305]
+modulate = Color(1, 0.3372549, 0.18431373, 1)
+amount = 500
+texture = ExtResource("2_660xs")
+lifetime = 0.1
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1500.0
+initial_velocity_max = 2250.0
+scale_amount_min = 10.0
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_660xs")
+color_ramp = SubResource("Gradient_fki0y")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dfsof722hj7b8"]
+
+[ext_resource type="Script" uid="uid://0hncfuig0xi0" path="res://skyster/other_vehicles/base_vehicle.gd" id="1_2jybi"]
+[ext_resource type="Texture2D" uid="uid://o102g544byi0" path="res://0assets/skyster_assets/truck.png" id="2_k3nob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3nob"]
+size = Vector2(95, 45)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2096276881]
+scale = Vector2(2, 2)
+script = ExtResource("1_2jybi")
+speed = 150.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=488597456]
+texture = ExtResource("2_k3nob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1847384087]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_k3nob")
