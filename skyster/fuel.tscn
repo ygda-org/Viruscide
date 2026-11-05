@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://0f1gcx3jb381"]
+
+[ext_resource type="Script" uid="uid://2id2sbehf1ul" path="res://skyster/fuel.gd" id="1_njvwi"]
+[ext_resource type="Texture2D" uid="uid://d04cw2a12cv1r" path="res://0assets/skyster_assets/gasoline.png" id="1_wpo5c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+
+[node name="Fuel" type="Area2D" unique_id=1897736259]
+scale = Vector2(3, 3)
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("1_njvwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953640552]
+position = Vector2(-1, 0)
+texture = ExtResource("1_wpo5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1537223215]
+shape = SubResource("RectangleShape2D_0es7p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

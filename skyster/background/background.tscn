@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bvpm707i86drr"]
+
+[ext_resource type="Texture2D" uid="uid://ch3d1yplryu08" path="res://0assets/skyster_assets/skyster_sky.png" id="1_g8g8x"]
+[ext_resource type="Texture2D" uid="uid://cmwxgrk75wy6e" path="res://0assets/global_assets/icon.svg" id="1_thgou"]
+
+[node name="Background" type="Node2D" unique_id=1624213323]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1692833062]
+z_index = -99
+repeat_size = Vector2(128, 128)
+repeat_times = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2136292507]
+texture = ExtResource("1_thgou")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=403185612]
+layer = -99
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=974686911]
+texture = ExtResource("1_g8g8x")
+centered = false

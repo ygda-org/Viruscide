@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b412jau6kjo1c"]
+
+[ext_resource type="PackedScene" uid="uid://bvpm707i86drr" path="res://skyster/background/background.tscn" id="1_181da"]
+[ext_resource type="PackedScene" uid="uid://bilg2j7nfj6xs" path="res://skyster/player/skyster.tscn" id="1_snael"]
+[ext_resource type="Script" uid="uid://qchkppg7w02d" path="res://skyster/skyster_game.gd" id="1_x0uqv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0es7p"]
+
+[node name="SkysterGame" type="Node2D" unique_id=992286114]
+script = ExtResource("1_x0uqv")
+
+[node name="Background" parent="." unique_id=1624213323 instance=ExtResource("1_181da")]
+
+[node name="Road" type="StaticBody2D" parent="." unique_id=872597560]
+position = Vector2(0, 260)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road" unique_id=334746955]
+shape = SubResource("WorldBoundaryShape2D_0es7p")
+
+[node name="Skyster" parent="." unique_id=416698674 instance=ExtResource("1_snael")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2100125822]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1966990390]
+offset_left = 23.0
+offset_top = 15.0
+offset_right = 46.0
+offset_bottom = 42.0
+
+[node name="Timer" type="Timer" parent="." unique_id=556574099]
+wait_time = 3.0
+autostart = true
+
+[connection signal="fuel_changed" from="Skyster" to="." method="_on_skyster_fuel_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

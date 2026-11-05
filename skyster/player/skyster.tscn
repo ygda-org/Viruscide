@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bilg2j7nfj6xs"]
+
+[ext_resource type="Script" uid="uid://porv5keot26" path="res://skyster/player/skyster.gd" id="1_b337n"]
+[ext_resource type="Texture2D" uid="uid://cmtxiot7yjea4" path="res://0assets/skyster_assets/skyster_frame.png" id="2_6w3x8"]
+[ext_resource type="Script" uid="uid://dl1egut5pgbvd" path="res://2base_classes/effects_camera/effects_camera.gd" id="3_6w3x8"]
+[ext_resource type="Texture2D" uid="uid://c53ep7j7ubr6a" path="res://0assets/skyster_assets/right_wheel.png" id="4_hd4t5"]
+[ext_resource type="Texture2D" uid="uid://d4c7tecu381af" path="res://0assets/skyster_assets/left_wheel.png" id="5_m6jpb"]
+[ext_resource type="Texture2D" uid="uid://dxpws16jq0avl" path="res://0assets/skyster_assets/thruster_inactive.png" id="6_m6jpb"]
+[ext_resource type="Texture2D" uid="uid://dl0q6c1krt65g" path="res://0assets/skyster_assets/thruster_fire.png" id="7_dl6ia"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0es7p"]
+size = Vector2(58, 21.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3lui"]
+size = Vector2(60, 23)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0es7p"]
+
+[node name="Skyster" type="CharacterBody2D" unique_id=416698674]
+scale = Vector2(2, 2)
+collision_layer = 4
+script = ExtResource("1_b337n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=46518963]
+position = Vector2(0, 0.625)
+shape = SubResource("RectangleShape2D_0es7p")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=295860566]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=142248254]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_o3lui")
+
+[node name="Camera" type="Camera2D" parent="." unique_id=630160520]
+script = ExtResource("3_6w3x8")
+noise = SubResource("FastNoiseLite_0es7p")
+metadata/_custom_type_script = "uid://dl1egut5pgbvd"
+
+[node name="Wheels" type="Node2D" parent="." unique_id=1699288570]
+
+[node name="ColorRect" type="ColorRect" parent="Wheels" unique_id=2095036885]
+offset_left = -25.0
+offset_top = -2.0
+offset_right = 28.5
+offset_bottom = 5.0
+color = Color(0.019607844, 0.019607844, 0.05882353, 1)
+
+[node name="RightWheel" type="Sprite2D" parent="Wheels" unique_id=1523354409]
+position = Vector2(22.5, 5.5)
+texture = ExtResource("4_hd4t5")
+
+[node name="LeftWheel" type="Sprite2D" parent="Wheels" unique_id=571849758]
+position = Vector2(-18, 5.5)
+texture = ExtResource("5_m6jpb")
+
+[node name="ColorRect2" type="ColorRect" parent="Wheels" unique_id=1301801622]
+offset_left = -24.5
+offset_top = 4.0
+offset_right = -23.5
+offset_bottom = 5.0
+color = Color(0.019607844, 0.019607844, 0.05882353, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Wheels" unique_id=1299746488]
+offset_left = -30.0
+offset_top = -1.0
+offset_right = -29.0
+color = Color(0.38431373, 0.3647059, 0.34117648, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="Wheels" unique_id=2025188374]
+offset_left = -30.0
+offset_right = -29.0
+offset_bottom = 1.0
+color = Color(0.15294118, 0.16470589, 0.18431373, 1)
+
+[node name="Frame" type="Sprite2D" parent="." unique_id=640420153]
+texture = ExtResource("2_6w3x8")
+flip_h = true
+
+[node name="Thrusters" type="Node2D" parent="." unique_id=1580391884]
+
+[node name="ThrusterInactive" type="Sprite2D" parent="Thrusters" unique_id=1462278572]
+position = Vector2(-6.5, 4)
+texture = ExtResource("6_m6jpb")
+
+[node name="ThrusterInactive2" type="Sprite2D" parent="Thrusters" unique_id=21679953]
+position = Vector2(11.5, 4)
+texture = ExtResource("6_m6jpb")
+
+[node name="ThrusterInactive3" type="Sprite2D" parent="Thrusters" unique_id=1811465015]
+position = Vector2(-33, -1.5)
+rotation = 1.5707964
+texture = ExtResource("6_m6jpb")
+
+[node name="BottomFire" type="Node2D" parent="Thrusters" unique_id=338692258]
+
+[node name="LeftFire" type="Sprite2D" parent="Thrusters/BottomFire" unique_id=1759956863]
+position = Vector2(-6.5, 9)
+texture = ExtResource("7_dl6ia")
+
+[node name="RightFire" type="Sprite2D" parent="Thrusters/BottomFire" unique_id=532735179]
+position = Vector2(11.5, 9)
+texture = ExtResource("7_dl6ia")
+
+[node name="LeftFire" type="Sprite2D" parent="Thrusters" unique_id=2011097302]
+position = Vector2(-38, -1.5)
+rotation = 1.5707964
+texture = ExtResource("7_dl6ia")
+
+[node name="BottomFireballCooldown" type="Timer" parent="." unique_id=5457414]
+wait_time = 0.05
+one_shot = true
+
+[node name="LeftFireballCooldown" type="Timer" parent="." unique_id=719912597]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="BottomFireballCooldown" to="." method="_on_bottom_fireball_cooldown_timeout"]
+[connection signal="timeout" from="LeftFireballCooldown" to="." method="_on_left_fireball_cooldown_timeout"]
