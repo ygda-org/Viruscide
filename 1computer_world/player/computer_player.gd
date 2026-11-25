@@ -32,12 +32,6 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		$Anim.play("fall")
 		was_in_air = true
-		var grav_mult: float = 1.0
-		if velocity.y < 0:
-			grav_mult = grav_curve_asc.sample(abs(velocity.y/JUMP_STRENGTH))
-		else:
-			grav_mult = grav_curve_dec.sample(velocity.y/MAX_FALL_SPEED)
-		#velocity.y += GRAVITY * grav_mult * delta
 	else: 
 		$CoyoteTime.start()
 		if was_in_air:
@@ -61,9 +55,6 @@ func _physics_process(delta: float) -> void:
 		#velocity.y /= 2.15
 		#TODO Jump Code
 		pass
-	# fall through platforms
-	set_collision_mask_value(2, not Input.is_action_pressed("down"))
-	
 	
 	# horizontal
 	var dir: Vector2 = Input.get_vector("left","right","up","down")
