@@ -12,6 +12,8 @@ const ACCELERATION: float = 900.0
 const DECELERATION: float = 1500.0
 const MAX_SPEED: float = 130.0
 
+const MAX_VEL_SPEED : float = 2 * (MAX_SPEED**2)
+
 @export var accel_curve: Curve
 @export var decel_curve: Curve
 
@@ -22,6 +24,10 @@ var was_in_air: bool = false
 var target_scale: Vector2 = Vector2(1,1)
 
 func _physics_process(delta: float) -> void:
+	if position.x > 928 or position.x < 928:
+		position.x = posmod(position.x, 928)
+	if position.y > 432 or position.y < 432:
+		position.y = posmod(position.y, 432)
 	# vertical
 	if not is_on_floor():
 		$Anim.play("fall")
@@ -31,7 +37,7 @@ func _physics_process(delta: float) -> void:
 			grav_mult = grav_curve_asc.sample(abs(velocity.y/JUMP_STRENGTH))
 		else:
 			grav_mult = grav_curve_dec.sample(velocity.y/MAX_FALL_SPEED)
-		velocity.y += GRAVITY * grav_mult * delta
+		#velocity.y += GRAVITY * grav_mult * delta
 	else: 
 		$CoyoteTime.start()
 		if was_in_air:
@@ -42,7 +48,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			$Anim.play("idle")
 	if not $JumpBuffer.is_stopped() and not $CoyoteTime.is_stopped():
-		velocity.y -= JUMP_STRENGTH
+		#velocity.y -= JUMP_STRENGTH
+		#TODO Jump Code
+		pass
 		$JumpBuffer.stop()
 		$CoyoteTime.stop()
 		target_scale = Vector2(0.4, 1.5)
@@ -50,18 +58,20 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
 		$JumpBuffer.start()
 	elif Input.is_action_just_released("jump") and velocity.y < 0:
-		velocity.y /= 2.15
+		#velocity.y /= 2.15
+		#TODO Jump Code
+		pass
 	# fall through platforms
 	set_collision_mask_value(2, not Input.is_action_pressed("down"))
 	
 	
 	# horizontal
-	var dir: float = Input.get_axis("left", "right")
+	var dir: Vector2 = Input.get_vector("left","right","up","down")
 	if dir:
-		velocity.x += dir * ACCELERATION * accel_curve.sample(abs(velocity.x)/MAX_SPEED) * delta
-	if dir * velocity.x <= 0:
-		velocity.x = move_toward(velocity.x, 0, DECELERATION * decel_curve.sample(abs(velocity.x/MAX_SPEED)) * delta)
-	velocity.x = clampf(velocity.x, -MAX_SPEED, MAX_SPEED)
+		velocity += dir * ACCELERATION * accel_curve.sample(velocity.length_squared()/MAX_VEL_SPEED) * delta
+	if dir.dot(velocity) <= 0:
+		velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * decel_curve.sample(velocity.length_squared()/MAX_VEL_SPEED) * delta)
+	velocity = velocity.clampf(-MAX_SPEED, MAX_SPEED)
 	
 	# animation/vfx stuff
 	

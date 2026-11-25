@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://wuntjm6ahb7b"]
 
 [ext_resource type="Texture2D" uid="uid://gsxcv4x35x5j" path="res://0assets/global_assets/temp/tileset.png" id="1_sc8mj"]
+[ext_resource type="Texture2D" uid="uid://cavpxhgjcgj0t" path="res://0assets/global_assets/temp/programmer_art-terrain.png" id="2_8navd"]
 [ext_resource type="Texture2D" uid="uid://csrcp0pjwc4ge" path="res://0assets/global_assets/temp/sideview_programmer_art.png" id="2_npjvu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_npjvu"]
@@ -40,6 +41,61 @@ texture = ExtResource("1_sc8mj")
 5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48jj3"]
+texture = ExtResource("2_8navd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8navd"]
 texture = ExtResource("2_npjvu")
@@ -94,3 +150,4 @@ texture = ExtResource("2_npjvu")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_npjvu")
 sources/2 = SubResource("TileSetAtlasSource_8navd")
+sources/1 = SubResource("TileSetAtlasSource_48jj3")
